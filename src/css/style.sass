@@ -1,0 +1,204 @@
+//MIXINS
+=bg-img($img, $align, $col)
+    background-color: $col
+    background-image: url($img)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center $align
+
+=calc($property, $expression)
+    #{$property}: -webkit-calc(#{$expression})
+    #{$property}: calc(#{$expression})
+
+@import url("//fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic")
+
+html
+    margin: 0
+
+body
+    margin: 0
+    margin-top: 60px
+    background-color: #EEE
+    font-family: "RobotoDraft", Helvetica, Arial, sans-serif
+
+.clearfix:after
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+
+header
+    position: fixed
+    top: 0
+    width: 100%
+    height: 20px
+    padding: 10px 10px 20px 10px
+    background-color: #00BCD6
+    display: flex
+    justify-content: space-between
+
+    h1
+        margin: 0
+        font-family: "RobotoDraft", Helvetica, Arial, sans-serif
+        font-weight: 300
+        text-align: center
+        color: #fff
+        display: inline-block
+        white-space: nowrap
+
+a p.menu
+    color: #fff
+    display: inline-block
+    margin-right: 30px
+    line-height: 10px
+    float: right
+    font-weight: 400
+    font-size: 18px
+    z-index: 2000
+    cursor: pointer
+
+.container
+    transition: all 0.6s ease-in-out
+    padding: 20px
+
+    p
+        margin: 0
+        font-weight: 300
+        color: #444
+        line-height: 32px
+
+        img.dp
+            width: 100px
+            border-radius: 50%
+            float: left
+            margin-right: 10px
+
+    .posthead
+        .posttitle
+            font-size: 24px
+            display: inline-block
+
+            small
+                font-size: 16px
+                margin-top: -5px
+                display: inline-block
+                vertical-align: middle
+                line-height: normal
+
+        a.icon-star
+            float: right
+            font-size: 32px
+            display: inline-block
+            margin-top: -10px
+            color: #ddd
+            text-decoration: none
+
+        a.icon-star:hover, a.icon-star:active
+            color: #e8e8e8
+
+        a.icon-star.fav
+            color: #fff000
+
+.home
+    background-color: #fff
+    max-width: 900px
+    padding: 30px
+    margin: 20px auto
+    text-align: center
+
+    .header-img
+        +calc(width, "100% + 60px")
+
+        height: 30vw
+        min-height: 200px
+        max-height: 350px
+        margin-left: -30px
+        margin-top: -30px
+
+        +bg-img("../images/cover.png", bottom, #444)
+
+        h2
+            margin: 0
+            margin-left: 30px
+            padding-top: 20px
+            float: left
+            color: #fff
+            font-weight: 300
+            font-size: 2em
+            white-space: nowrap
+
+    img.dp
+        width: 160px
+        border-radius: 50%
+        margin-top: -110px
+        margin-left: auto
+        margin-right: auto
+
+.card
+    background-color: #fff
+    max-width: 600px
+    padding: 30px
+    margin: 20px auto
+
+.sidebar
+    width: 200px
+    background-color: #fff
+    right: -200px
+    position: fixed
+    bottom: 0px
+    transition: all 0.6s ease-in-out
+    top: 0
+    z-index: 20
+
+    ul
+        margin-top: 45px
+        padding: 0
+        text-decoration: none
+        list-style-type: none
+        width: 100%
+
+        a
+            width: 100%
+            display: block
+            text-align: center
+            line-height: 28px
+            color: #000
+            text-decoration: none
+            text-transform: uppercase
+
+        a:hover
+            font-weight: 500
+
+        a.active
+            text-decoration: underline
+            font-weight: 500
+
+.sidebar-active
+    right: 0
+    transition: all 0.6s ease-in-out
+
+.sidebar-off .menu
+    color: #000
+    line-height: 25px
+    margin-left: 30px
+    display: block
+    position: absolute
+
+.container-left
+    margin-right: 200px
+    transition: all 0.6s ease-in-out
+
+@media (min-width: 1400px)
+    .container-left
+        margin-right: 0px
+
+@media (max-width: 510px)
+    .container-left
+        margin-right: 0px
+
+@media (max-width: 345px)
+    header
+        h1
+            font-size: 24px

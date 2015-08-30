@@ -1,0 +1,1 @@
+<title><?php echo $title; ?></title><link href="css/style.css" rel="stylesheet"><link href="css/fonts.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="js/jquery-2.1.4.min.js"></script><script src="js/functions.js"></script>
